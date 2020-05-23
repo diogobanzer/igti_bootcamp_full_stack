@@ -7,8 +7,11 @@ var blue = null;
 function start() {
   console.log('hello world');
   red = window.document.querySelector('#red');
+  red.value = 0;
   green = window.document.querySelector('#green');
+  green.value = 0;
   blue = window.document.querySelector('#blue');
+  blue.value = 0;
   getValue();
 }
 
@@ -16,10 +19,12 @@ function getValue() {
   var redNum = window.document.querySelector('#redNum');
   var greenNum = window.document.querySelector('#greenNum');
   var blueNum = window.document.querySelector('#blueNum');
+  var color = window.document.querySelector('#color');
   var rgb = null;
 
   function displayColor() {
-    rgb = 'rgb(' + redNum.value + ',' + green.value + ',' + blue.value + ')';
+    rgb =
+      'rgb(' + redNum.value + ',' + greenNum.value + ',' + blueNum.value + ')';
     color.style.backgroundColor = rgb;
   }
 
@@ -35,4 +40,6 @@ function getValue() {
   }
 
   pickColor(red, redNum);
+  pickColor(green, greenNum);
+  pickColor(blue, blueNum);
 }
